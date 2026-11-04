@@ -1,0 +1,179 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>แผนยุทธศาสตร์ รพ.บัวใหญ่ 2569</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: hero summary (donut + strategy bars) -> attention list -> owner view -> filterable KPI list */
+:root{--bg:#eef1f5;--surface:#fff;--ink:#1a2438;--muted:#5b6679;--line:#d9dfe8;--accent:#1c3a6e;--gold:#a8802f;--hdr:#142b52;--hdr-ink:#fff;--pass:#1e7a52;--pass-bg:#e4f1ea;--fail:#b23a2c;--fail-bg:#f8e7e4;--track:#e3e8ef;
+--f-d:'Noto Sans Thai','Sarabun',system-ui,sans-serif;--f-b:'Noto Sans Thai','Sarabun',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1526;--surface:#152036;--ink:#e8edf6;--muted:#9aa8c0;--line:#27344d;--accent:#8fb3ec;--gold:#d4aa58;--hdr:#101d38;--hdr-ink:#fff;--pass:#4fc593;--pass-bg:#173a2e;--fail:#f0806e;--fail-bg:#3f1f1a;--track:#233049;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1526;--surface:#152036;--ink:#e8edf6;--muted:#9aa8c0;--line:#27344d;--accent:#8fb3ec;--gold:#d4aa58;--hdr:#101d38;--hdr-ink:#fff;--pass:#4fc593;--pass-bg:#173a2e;--fail:#f0806e;--fail-bg:#3f1f1a;--track:#233049;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-b);font-size:16px;line-height:1.65;padding-block:24px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:var(--f-d);margin:0;text-wrap:balance;line-height:1.25}
+h1{font-size:clamp(24px,4.5vw,34px);font-weight:600}
+h2{font-size:21px;font-weight:600}
+.sub{color:var(--muted);margin:4px 0 0}
+.card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px;padding:24px;box-shadow:0 1px 3px rgba(20,43,82,.08)}
+header{background:var(--hdr);color:var(--hdr-ink);padding:26px 28px;border-radius:4px;border-bottom:4px solid var(--gold)}
+header .sub{color:rgba(255,255,255,.8)}
+header .eyebrow{font-size:15px;letter-spacing:.08em;color:var(--gold);margin:0 0 4px;font-weight:600}
+h2{color:var(--accent)}
+.hero{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:28px;align-items:center}
+.donutbox{position:relative;width:100%;max-width:240px;margin:0 auto}
+.donutbox svg{width:100%;display:block}
+.donutc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.donutc b{font-family:var(--f-d);font-size:46px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.donutc span{color:var(--muted);font-size:14px;margin-top:4px}
+.kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:3px;font-size:14px;font-weight:500}
+.chip i{width:8px;height:8px;border-radius:50%;background:currentColor}
+.pass{color:var(--pass);background:var(--pass-bg)}.fail{color:var(--fail);background:var(--fail-bg)}
+.strat{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.srow .top{display:flex;justify-content:space-between;gap:12px;font-size:15px}
+.srow .top span:first-child{min-width:0}
+.srow .top b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{display:flex;height:12px;border-radius:2px;overflow:hidden;background:var(--track);margin-top:6px;gap:2px}
+.bar div{height:100%}
+.bp{background:var(--pass)}.bf{background:var(--fail)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px}
+.attn{display:flex;flex-direction:column;margin-top:10px}
+.attn li{list-style:none;display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.attn{padding:0;margin:10px 0 0}
+.no{font-family:var(--f-d);font-weight:600;color:var(--fail);font-variant-numeric:tabular-nums}
+.meta{color:var(--muted);font-size:14px}
+.own{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.orow{display:grid;grid-template-columns:minmax(90px,38%) minmax(0,1fr) 44px;gap:10px;align-items:center;font-size:15px}
+.orow .bar{margin:0}.orow b{text-align:right;font-variant-numeric:tabular-nums}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.tools button{font:inherit;font-size:15px;padding:6px 14px;border-radius:3px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--hdr);border-color:var(--hdr);color:#fff;font-weight:600}
+.tools input{font:inherit;font-size:15px;flex:1 1 180px;min-width:0;padding:7px 14px;border-radius:3px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sg{margin-top:18px}
+.sg h3{color:var(--ink);font-size:17px;font-weight:600;display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.sg h3 small{font-weight:500;color:var(--muted);font-family:var(--f-b);white-space:nowrap}
+.k{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);align-items:start}
+.k .n{font-family:var(--f-d);font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+.k .nm{font-weight:500}
+.k .det{display:flex;gap:6px 16px;flex-wrap:wrap;margin-top:4px;color:var(--muted);font-size:14px}
+.subs{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--muted)}
+.subs li{display:flex;gap:8px;align-items:center}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.empty{padding:24px;text-align:center;color:var(--muted)}
+.note{color:var(--muted);font-size:14px}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.card{padding:16px}.orow{grid-template-columns:minmax(80px,40%) minmax(0,1fr) 36px}}
+.teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}
+.tb{font:inherit;text-align:left;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:10px 12px;cursor:pointer;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tb[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--bg)}
+.tb strong{font-family:var(--f-d);font-weight:600;font-size:16px;line-height:1.2}
+.tb .bar{margin:0;height:8px}
+.tb small{color:var(--muted);font-size:14px}
+.tb .warn{color:var(--fail);font-weight:600}
+.td{margin-top:16px;border-top:2px solid var(--accent);padding-top:6px;overflow-x:auto}
+.td table{width:100%;border-collapse:collapse;min-width:520px}
+.td th{text-align:left;font-weight:600;color:var(--muted);font-size:14px;padding:8px 8px 8px 0;border-bottom:1px solid var(--line)}
+.td td{padding:9px 8px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.td tr.mis td{background:var(--fail-bg)}
+.nd{color:var(--muted);background:var(--track)}
+.tag{font-size:14px;color:var(--muted)}
+.mnote{margin:10px 0 0;font-size:14px;color:var(--fail)}
+</style>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">รายงานผลการดำเนินงาน</p>
+    <h1>แผนยุทธศาสตร์ โรงพยาบาลบัวใหญ่ ปีงบประมาณ 2569</h1>
+    <p class="sub">ผลงานตั้งแต่ 1 ต.ค. 68 – 30 ก.ย. 69 · ประเมินผลภาพรวม 42 ตัวชี้วัด</p>
+  </header>
+
+  <section class="card hero" aria-label="ภาพรวม">
+    <div class="donutbox"><svg viewBox="0 0 120 120" id="donut" role="img" aria-label="สัดส่วนตัวชี้วัดที่ผ่าน"></svg>
+      <div class="donutc"><b id="pctbig"></b><span>ตัวชี้วัดที่ผ่านเกณฑ์</span></div></div>
+    <div>
+      <h2 id="headline"></h2>
+      <div class="kpis" id="chips"></div>
+      <div class="strat" id="strat"></div>
+    </div>
+  </section>
+
+  <div class="one">
+    <section class="card"><h2>ตัวชี้วัดที่ยังไม่ผ่าน ต้องเร่งติดตาม</h2><p class="sub" id="attnsub"></p><ul class="attn" id="attn"></ul></section>
+  </div>
+
+  <section class="card">
+    <h2>ผลแยกตามทีม</h2>
+    <p class="sub">เลือกทีมเพื่อดูตัวชี้วัดที่ทีมรับผิดชอบ เทียบสถานะในชีตทีมกับชีตหน้าแรก</p>
+    <div class="teams" id="teams"></div>
+    <div id="tdetail"></div>
+  </section>
+
+  <section class="card">
+    <h2>รายการตัวชี้วัดทั้งหมด</h2>
+    <div class="tools" role="group" aria-label="ตัวกรอง">
+      <button type="button" data-f="all" aria-pressed="true">ทั้งหมด</button>
+      <button type="button" data-f="pass" aria-pressed="false">ผ่าน</button>
+      <button type="button" data-f="fail" aria-pressed="false">ไม่ผ่าน</button>
+      <input id="q" type="search" placeholder="ค้นหาตัวชี้วัด หรือชื่อหน่วยงาน" aria-label="ค้นหา">
+    </div>
+    <div id="list"></div>
+  </section>
+  <p class="note">ที่มา: ไฟล์ “หน้าแรกประมวลผล” คอลัมน์ประเมินผลภาพรวมทั้ง 42 ข้อ · ตัวชี้วัดที่มีข้อย่อย (ข้อ 1, 21, 34) นับเป็น 1 ข้อ · ค่า “ร้อยละ” แสดงตามที่บันทึกในไฟล์</p>
+</div>
+<script>
+const T=[{"team": "ทีมเครื่องมือแพทย์", "items": [{"no": "34.1", "name": "อัตราความเพียงพอขอเครื่องมือแพทย์", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "34.2", "name": "อัตราความพร้อมใช้ของเครื่องมือแพทย์", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}]}, {"team": "CFO", "items": [{"no": "40", "name": "โรงพยาบาล มีระดับความเสี่ยงทางการเงิน (Risk Scoring) ตามเกณฑ์", "main": "fail", "team": "fail", "raw": "ไม่่ผ่าน", "prim": true, "mis": false}, {"no": "42", "name": "รายได้จาก 3 กองทุน (บัตรทอง จ่ายตรง ประกันสังคม) เพิ่มขึ้น 10 %", "main": "fail", "team": "nodata", "raw": null, "prim": true, "mis": false}]}, {"team": "NCD (โรคไม่ติดต่อ)", "items": [{"no": "11", "name": "ร้อยละการเกิด CKD รายใหม่ ในผู้ป่วยเบาหวานและโรคไต", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "21.1", "name": "ร้อยละความพึงพอใจผู้ป่วยนอก", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": false, "mis": false}]}, {"team": "แพทย์แผนไทย", "items": [{"no": "27", "name": "ร้อยละการเข้าถึงบริการแพทย์แผนไทยและการแพทย์ทางเลือกในผู้ป่วยนอก", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}]}, {"team": "ทีม NSO", "items": [{"no": "21.1", "name": "ร้อยละความพึงพอใจผู้ป่วยนอก", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "21.2", "name": "ร้อยละความพึงพอใจผู้ป่วยใน", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}]}, {"team": "ทีม HRD", "items": [{"no": "29", "name": "อัตราความเพียงพอของบุคลากร ตามกรอบ FTE", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": true, "mis": false}, {"no": "30", "name": "อัตราการคงอยู่ของบุคลากร", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "31", "name": "ร้อยละของบุคลากรที่ประเมิน Specific functional competency ตามเกณฑ์", "main": "fail", "team": "nodata", "raw": "#DIV/0!", "prim": true, "mis": false}, {"no": "32", "name": "ร้อยละบุคลากรได้รับการอบรมตามแผนพัฒนาบุคลากร", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": true, "mis": false}, {"no": "33", "name": "ร้อยละของบุคลากรมีผลการประเมิน Hapinometer ตามเกณฑ์", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}]}, {"team": "สารสนเทศ (IM)", "items": [{"no": "19", "name": "โรงพยาบาลผ่านการประเมินโรงพยาบาลอัจฉริยะ", "main": "fail", "team": "fail", "raw": null, "prim": true, "mis": false}, {"no": "36", "name": "โรงพยาบาลผ่านการประเมิน HAIT", "main": "fail", "team": "fail", "raw": null, "prim": true, "mis": false}, {"no": "37", "name": "โรงพยาบาลผ่านการประเมินโรงพยาบาลอัจฉริยะ", "main": "fail", "team": "pass", "raw": "ผ่าน ระดับเพเงิน", "prim": true, "mis": true}, {"no": "38", "name": "อัตราการเพิ่มขึ้นของผู้ติดตามสื่อโฆษณา Facebook/เว็บไซต์/สื่อออนไลน์ของโรงพยาบาลบัวใหญ่", "main": "fail", "team": "fail", "raw": null, "prim": true, "mis": false}]}, {"team": "อาชีวอนามัย", "items": [{"no": "41", "name": "รายได้จากการตรวจสุขภาพหน่วยงานภายนอกเพิ่มขึ้น", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}]}, {"team": "สุขภาพจิต", "items": [{"no": "4", "name": "อัตราผู้ป่วยจิตเวชที่มีพฤติกรรมก้าวร้าวไม่ก่อความรุนแรงซ้ำ", "main": "fail", "team": "pass", "raw": null, "prim": true, "mis": true}, {"no": "5", "name": "อัตราการฆ่าตัวตายสำเร็จ", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "10", "name": "ร้อยละผู้ป่วยจิตเวชได้รับการ Admit ตามมาตรฐาน (ระดับ2 ขึ้นไป)", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}]}, {"team": "ทันตกรรม", "items": [{"no": "21.1", "name": "ร้อยละความพึงพอใจผู้ป่วยนอก", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": false, "mis": false}, {"no": "25", "name": "ร้อยละของผู้บริการทันตกรรมเพิ่มขึ้น", "main": "pass", "team": "pass", "raw": "ผ่่าน", "prim": true, "mis": false}, {"no": "26", "name": "อัตราการให้บริการทันตกรรมฟันเทียมเพิ่มขึ้น", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}]}, {"team": "ทีม PCT", "items": [{"no": "6", "name": "อัตราการเสียชีวิตกลุ่มโรคสำคัญลดลง (6 โรค) (Sepsis, STEMI, Stroke, pneumonia,UGIB,CKD)", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "7", "name": "อัตราการเกิดความเสี่ยงระดับ E -ขึ้นไป (Sepsis, STEMI, Stroke, pneumonia, Congenital)", "main": "fail", "team": "fail", "raw": null, "prim": true, "mis": false}, {"no": "9", "name": "ลดอัตราการเกิด Congenital pneumonia", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "11", "name": "ร้อยละการเกิด CKD รายใหม่ ในผู้ป่วยเบาหวานและโรคไต", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": false, "mis": false}, {"no": "12", "name": "อัตราการทรุดลงอย่างรุนแรงในผู้ป่วยเด็กโรคหอบหืด (Asthma)", "main": "pass", "team": "fail", "raw": null, "prim": true, "mis": true}, {"no": "13", "name": "อัตราการติดเชื้อในผู้ป่วยผ่าตัดข้อเข่า", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "14", "name": "อัตราการเกิดภาวะแทรกซ้อนในผู้ป่วยผ่าตัดข้อสะโพก", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "15", "name": "อัตราการเกิดตกเลือดหลังคลอด", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "16", "name": "อัตราการเกิด Asphyxia ในเด็กแรกเกิด", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": true, "mis": false}, {"no": "17", "name": "ร้อยละการ Refer Out โรค Pneumonia ในเด็ก", "main": "fail", "team": "nodata", "raw": "#DIV/0!", "prim": true, "mis": false}, {"no": "18", "name": "ร้อยละการเกิดภาวะแทรกซ้อนในผู้ป่วยผ่าตัด EL", "main": "fail", "team": "nodata", "raw": "#DIV/0!", "prim": true, "mis": false}, {"no": "22", "name": "อัตราการให้บริการผ่าตัดข้อเข่าและข้อสะโพกแก่ผู้ป่วยที่ได้รับการวินิจฉัยจากแพทย์ที่ต้องเข้ารับการผ่าตัด", "main": "fail", "team": "nodata", "raw": "#DIV/0!", "prim": true, "mis": false}, {"no": "23", "name": "อัตราการให้บริการส่องกล้องลำไส้ใหญ่ (Colonoscopy) แก่ผู้ป่วยกลุ่มเป้าหมายที่แพทย์ส่งต่อเพื่อวินิจฉัยโรค", "main": "pass", "team": "pass", "raw": null, "prim": true, "mis": false}, {"no": "24", "name": "อัตราการให้บริการผ่าตัดส่องกล้อง (laparoscopy) แก่ผู้ป่วยกลุ่มเป้าหมายที่แพทย์ส่งต่อเพื่อการรักษา", "main": "fail", "team": "fail", "raw": null, "prim": true, "mis": false}]}, {"team": "บริการปฐมภูมิ", "items": [{"no": "15", "name": "อัตราการเกิดตกเลือดหลังคลอด", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": false, "mis": false}, {"no": "21.1", "name": "ร้อยละความพึงพอใจผู้ป่วยนอก", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": false, "mis": false}, {"no": "23", "name": "อัตราการให้บริการส่องกล้องลำไส้ใหญ่ (Colonoscopy) แก่ผู้ป่วยกลุ่มเป้าหมายที่แพทย์ส่งต่อเพื่อวินิจฉัยโรค", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": false, "mis": false}, {"no": "27", "name": "ร้อยละการเข้าถึงบริการแพทย์แผนไทยและการแพทย์ทางเลือกในผู้ป่วยนอก", "main": "pass", "team": "nodata", "raw": "#DIV/0!", "prim": false, "mis": false}, {"no": "41", "name": "รายได้จากการตรวจสุขภาพหน่วยงานภายนอกเพิ่มขึ้น", "main": "pass", "team": "fail", "raw": null, "prim": false, "mis": true}]}];
+const D=[{"no": 1, "name": "ผู้ป่วย 5 กลุ่มโรค (IMC) ได้รับการเยี่ยมบ้าน", "st": 1, "goal": "พัฒนาระบบการดูแลผู้ป่วยที่บ้าน", "status": "pass", "own": "ทีมเยี่ยมบ้าน", "tgt": null, "pct": null, "act": null, "sent": false, "subs": [{"name": "1.1 ร้อยละผู้ป่วย 4 กลุ่มโรค (IMC) ได้รับการเยี่ยมบ้าน", "status": "pass", "tgt": "100%", "pct": "100.0%"}, {"name": "1.2 ร้อยละผู้ป่วย 4 กลุ่มโรค (IMC) ได้รับการเยี่ยม 6 ครั้งคุณภาพ", "status": "pass", "tgt": "85%", "pct": "93.3%"}]}, {"no": 2, "name": "ร้อยละผู้ป่วย Home ward เพิ่มขึ้น", "st": 1, "goal": "พัฒนาระบบการดูแลผู้ป่วยที่บ้าน", "status": "fail", "own": "ทีมเยี่ยมบ้าน", "tgt": "50%", "pct": "0.0%", "act": null, "sent": false, "subs": []}, {"no": 3, "name": "อัตราการป่วยด้วยโรคไข้เลือดออกไม่เกินค่ามาตรฐานย้อนหลัง 5 ปี", "st": 1, "goal": "เสริมสร้างความเข้มแข็ง ควบคุมโรคติดต่อและภัยสุขภาพ", "status": "fail", "own": "งานระบาดวิทยา", "tgt": null, "pct": "27.9%", "act": null, "sent": true, "subs": []}, {"no": 4, "name": "อัตราผู้ป่วยจิตเวชที่มีพฤติกรรมก้าวร้าวไม่ก่อความรุนแรงซ้ำ", "st": 1, "goal": "พััฒนาระบบการดูแลผู้ป่วยจิดเวชและยาเสพติด", "status": "fail", "own": "สุขภาพจิต", "tgt": "83%", "pct": "88.1%", "act": null, "sent": true, "subs": []}, {"no": 5, "name": "อัตราการฆ่าตัวตายสำเร็จ", "st": 1, "goal": "พััฒนาระบบการดูแลผู้ป่วยจิดเวชและยาเสพติด", "status": "pass", "own": "สุขภาพจิต", "tgt": "7.8 ต่อแสน ปชก.", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 6, "name": "อัตราการเสียชีวิตกลุ่มโรคสำคัญลดลง (6 โรค) (Sepsis, STEMI, Stroke, pneumonia,UGIB,CKD)", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "ทีม PCT", "tgt": "3%", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 7, "name": "อัตราการเกิดความเสี่ยงระดับ E -ขึ้นไป (Sepsis, STEMI, Stroke, pneumonia, Congenital)", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "fail", "own": "ทีม PCT", "tgt": "5%", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 8, "name": "อัตราการเข้าสู่ภาวะพึ่งพิงของผู้ป่วย Stroke (LTC)", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "ไม่ระบุ", "tgt": null, "pct": null, "act": null, "sent": false, "subs": []}, {"no": 9, "name": "ลดอัตราการเกิด Congenital pneumonia", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "ทีม PCT", "tgt": "3", "pct": "2.8%", "act": null, "sent": true, "subs": []}, {"no": 10, "name": "ร้อยละผู้ป่วยจิตเวชได้รับการ Admit ตามมาตรฐาน (ระดับ2 ขึ้นไป)", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "สุขภาพจิต", "tgt": "90%", "pct": "100.0%", "act": null, "sent": true, "subs": []}, {"no": 11, "name": "ร้อยละการเกิด CKD รายใหม่ ในผู้ป่วยเบาหวานและโรคไต", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "โรคไม่ติดต่อ", "tgt": "1.3%", "pct": "3.5%", "act": null, "sent": false, "subs": []}, {"no": 12, "name": "อัตราการทรุดลงอย่างรุนแรงในผู้ป่วยเด็กโรคหอบหืด (Asthma)", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "ทีม PCT", "tgt": "5%", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 13, "name": "อัตราการติดเชื้อในผู้ป่วยผ่าตัดข้อเข่า", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "ทีม PCT", "tgt": "0", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 14, "name": "อัตราการเกิดภาวะแทรกซ้อนในผู้ป่วยผ่าตัดข้อสะโพก", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "ทีม PCT", "tgt": "0", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 15, "name": "อัตราการเกิดตกเลือดหลังคลอด", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "ทีม PCT", "tgt": "≤ 0.5 ต่อพันการเกิดมีชีพ", "pct": "0.0%", "act": null, "sent": true, "subs": []}, {"no": 16, "name": "อัตราการเกิด Asphyxia ในเด็กแรกเกิด", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "pass", "own": "ทีม PCT", "tgt": "< 21 ต่อพันการเกิดมีชีพ", "pct": "13.7%", "act": null, "sent": true, "subs": []}, {"no": 17, "name": "ร้อยละการ Refer Out โรค Pneumonia ในเด็ก", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "fail", "own": "ทีม PCT", "tgt": "5%", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 18, "name": "ร้อยละการเกิดภาวะแทรกซ้อนในผู้ป่วยผ่าตัด EL", "st": 2, "goal": "พัฒนาระบบการดูแลผู้ป่วยกลุ่มโรคสำคัญให้ได้มาตราฐานและปลอดภัย", "status": "fail", "own": "ทีม PCT", "tgt": "รอเป้าหมาย", "pct": null, "act": null, "sent": false, "subs": []}, {"no": 19, "name": "โรงพยาบาลผ่านการประเมินโรงพยาบาลอัจฉริยะ", "st": 2, "goal": "พัฒนาระบบการบริหารความเสี่ยง", "status": "fail", "own": "สารสนเทศ (IM)", "tgt": "ระดับทอง", "pct": null, "act": null, "sent": false, "subs": []}, {"no": 20, "name": "อัตราเกิดความเสี่ยงตามมาตรฐานสำคัญ จำเป็น 9 ข้อ ระดับ E -ขึ้นไป", "st": 2, "goal": "พัฒนาระบบการบริหารความเสี่ยง", "status": "fail", "own": "ทีม RM", "tgt": "0", "pct": null, "act": null, "sent": false, "subs": []}, {"no": 21, "name": "ความพึงพอใจของผู้มารับบริการ", "st": 2, "goal": "พัฒนาระบบการบริหารความเสี่ยง", "status": "pass", "own": "ทีม NSO", "tgt": null, "pct": null, "act": null, "sent": false, "subs": [{"name": "21.1 ร้อยละความพึงพอใจผู้ป่วยนอก", "status": "pass", "tgt": "90%", "pct": "91.7%"}, {"name": "21.2 ร้อยละความพึงพอใจผู้ป่วยใน", "status": "pass", "tgt": "95%", "pct": "95.1%"}]}, {"no": 22, "name": "อัตราการให้บริการผ่าตัดข้อเข่าและข้อสะโพกแก่ผู้ป่วยที่ได้รับการวินิจฉัยจากแพทย์ที่ต้องเข้ารับการผ่าตัด", "st": 2, "goal": "เพิ่มศักยภาพการดูแลผู้ป่วย 5 สาขาหลัก", "status": "fail", "own": "ทีม PCT", "tgt": "15%", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 23, "name": "อัตราการให้บริการส่องกล้องลำไส้ใหญ่ (Colonoscopy) แก่ผู้ป่วยกลุ่มเป้าหมายที่แพทย์ส่งต่อเพื่อวินิจฉัยโรค", "st": 2, "goal": "เพิ่มศักยภาพการดูแลผู้ป่วย 5 สาขาหลัก", "status": "pass", "own": "ทีม PCT", "tgt": "10%", "pct": "23.2%", "act": null, "sent": false, "subs": []}, {"no": 24, "name": "อัตราการให้บริการผ่าตัดส่องกล้อง (laparoscopy) แก่ผู้ป่วยกลุ่มเป้าหมายที่แพทย์ส่งต่อเพื่อการรักษา", "st": 2, "goal": "เพิ่มศักยภาพการดูแลผู้ป่วย 5 สาขาหลัก", "status": "fail", "own": "ทีม PCT", "tgt": "10%", "pct": "3.9%", "act": null, "sent": false, "subs": []}, {"no": 25, "name": "ร้อยละของผู้บริการทันตกรรมเพิ่มขึ้น", "st": 2, "goal": "เพิ่มการเข้าถึงบริการด้านทันตกรรม", "status": "pass", "own": "กลุ่มงานทันตกรรม", "tgt": null, "pct": "42.6%", "act": null, "sent": true, "subs": []}, {"no": 26, "name": "อัตราการให้บริการทันตกรรมฟันเทียมเพิ่มขึ้น", "st": 2, "goal": "เพิ่มการเข้าถึงบริการด้านทันตกรรม", "status": "pass", "own": "กลุ่มงานทันตกรรม", "tgt": null, "pct": "94.3%", "act": null, "sent": false, "subs": []}, {"no": 27, "name": "ร้อยละการเข้าถึงบริการแพทย์แผนไทยและการแพทย์ทางเลือกในผู้ป่วยนอก", "st": 2, "goal": "พัฒนาศัยกภาพบริการแพทย์แผนไทยและการแพทย์ทางเลือก", "status": "pass", "own": "แพทย์แผนไทย", "tgt": "12%", "pct": "14.2%", "act": null, "sent": true, "subs": []}, {"no": 28, "name": "อัตราการรับส่งต่อผู้ป่วย (Refer in) เพิ่มขึ้น", "st": 2, "goal": "พััฒนาระบบส่งต่ออย่างมีคุณภาพ", "status": "pass", "own": "งานอุบัติเหตุฉุกเฉิน", "tgt": null, "pct": null, "act": null, "sent": false, "subs": []}, {"no": 29, "name": "อัตราความเพียงพอของบุคลากร ตามกรอบ FTE", "st": 3, "goal": "พัฒนาการสรรหาบุคลากรให้เพียงพอและธำรงค์อยู่", "status": "pass", "own": "ทีม HRD", "tgt": "≥ 80%", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 30, "name": "อัตราการคงอยู่ของบุคลากร", "st": 3, "goal": "พัฒนาการสรรหาบุคลากรให้เพียงพอและธำรงค์อยู่", "status": "pass", "own": "ทีม HRD", "tgt": "96%", "pct": "90.8%", "act": null, "sent": true, "subs": []}, {"no": 31, "name": "ร้อยละของบุคลากรที่ประเมิน Specific functional competency ตามเกณฑ์", "st": 3, "goal": "พัฒนาสมรรถนะเฉพาะด้าน (Specific Functional Competecy) บุคลากร", "status": "fail", "own": "ทีม HRD", "tgt": "≥ 80%", "pct": "0.0%", "act": null, "sent": false, "subs": []}, {"no": 32, "name": "ร้อยละบุคลากรได้รับการอบรมตามแผนพัฒนาบุคลากร", "st": 3, "goal": "พัฒนาศักยภาพบริการและสมรรถนะบุคลากร", "status": "pass", "own": "ทีม HRD", "tgt": "55%", "pct": "83.2%", "act": null, "sent": false, "subs": []}, {"no": 33, "name": "ร้อยละของบุคลากรมีผลการประเมิน Hapinometer ตามเกณฑ์", "st": 3, "goal": "พัฒนาศักยภาพบริการและสมรรถนะบุคลากร", "status": "pass", "own": "ทีม HRD", "tgt": "55%", "pct": "63.8%", "act": null, "sent": false, "subs": []}, {"no": 34, "name": "อัตราความเพียงพอและใช้งานได้ของเครื่องมือแพทย์", "st": 4, "goal": "พัฒนาระบบบริการที่สำคัญให้ได้มาตรฐานปลอดภัย", "status": "pass", "own": "ทีมเครื่องมือแพทย์", "tgt": null, "pct": null, "act": null, "sent": false, "subs": [{"name": "34.1 อัตราความเพียงพอขอเครื่องมือแพทย์", "status": "pass", "tgt": "80%", "pct": "100.0%"}, {"name": "34.2 อัตราความพร้อมใช้ของเครื่องมือแพทย์", "status": "pass", "tgt": "75%", "pct": "78.0%"}]}, {"no": 35, "name": "โรงพยาบาลผ่านเกณฑ์การประเมิน Green & Clean Hospital challence", "st": 4, "goal": "พัฒนาระบบบริการที่สำคัญให้ได้มาตรฐานปลอดภัย", "status": "pass", "own": "ทีม ENV", "tgt": "ระดัับ challence", "pct": null, "act": "Excellent", "sent": true, "subs": []}, {"no": 36, "name": "โรงพยาบาลผ่านการประเมิน HAIT", "st": 4, "goal": "พัฒนาระบบสารสนเทศทางการแพทย์อย่างมีคุณภาพ", "status": "fail", "own": "สารสนเทศ (IM)", "tgt": "ระดับ 1", "pct": null, "act": null, "sent": true, "subs": []}, {"no": 37, "name": "โรงพยาบาลผ่านการประเมินโรงพยาบาลอัจฉริยะ", "st": 4, "goal": "พัฒนาระบบสารสนเทศทางการแพทย์อย่างมีคุณภาพ", "status": "fail", "own": "สารสนเทศ (IM)", "tgt": "ระดับทอง", "pct": null, "act": "ระดับเงิน", "sent": true, "subs": []}, {"no": 38, "name": "อัตราการเพิ่มขึ้นของผู้ติดตามสื่อโฆษณา Facebook/เว็บไซต์/สื่อออนไลน์ของโรงพยาบาลบัวใหญ่", "st": 4, "goal": "พัฒนาระบบสารสนเทศทางการแพทย์อย่างมีคุณภาพ", "status": "fail", "own": "สารสนเทศ (IM)", "tgt": "50%", "pct": "17.8%", "act": null, "sent": true, "subs": []}, {"no": 39, "name": "ร้อยละค่าตัวชี้วัดแผนยุทธศาสตร์โรงพยาบาลบัวใหญ่ผ่านเกณฑ์", "st": 4, "goal": "พัฒนาระบบการกำกับติดตามและประเมินผล", "status": "pass", "own": "งานยุทธศาสตร์", "tgt": "50%", "pct": "59.5%", "act": null, "sent": false, "subs": []}, {"no": 40, "name": "โรงพยาบาล มีระดับความเสี่ยงทางการเงิน (Risk Scoring) ตามเกณฑ์", "st": 4, "goal": "พัฒนาการเพิ่มรายได้ ลดรายจ่าย และการบริหารการเงินการคลังที่มีประสิทธิภาพ", "status": "fail", "own": "CFO", "tgt": "ระดับ 3", "pct": null, "act": "ระดับ 6", "sent": false, "subs": []}, {"no": 41, "name": "รายได้จากการตรวจสุขภาพหน่วยงานภายนอกเพิ่มขึ้น", "st": 4, "goal": "พัฒนาการเพิ่มรายได้ ลดรายจ่าย และการบริหารการเงินการคลังที่มีประสิทธิภาพ", "status": "pass", "own": "งานอาชีวอนามัย", "tgt": "20%", "pct": "358.8%", "act": null, "sent": false, "subs": []}, {"no": 42, "name": "รายได้จาก 3 กองทุน (บัตรทอง จ่ายตรง ประกันสังคม) เพิ่มขึ้น 10 %", "st": 4, "goal": "พัฒนาการเพิ่มรายได้ ลดรายจ่าย และการบริหารการเงินการคลังที่มีประสิทธิภาพ", "status": "fail", "own": "CFO", "tgt": "5%", "pct": null, "act": null, "sent": false, "subs": []}];
+const SN={1:'ส่งเสริมสุขภาพ ป้องกันโรค (PP&P)',2:'พัฒนาระบบบริการที่เป็นเลิศ (Service)',3:'กำลังคนและภาคีเครือข่าย (People)',4:'บริหารจัดการที่เป็นเลิศ (Governance)'};
+const $=id=>document.getElementById(id);
+const pass=D.filter(x=>x.status==='pass').length,fail=D.length-pass,P=Math.round(pass/D.length*100);
+$('pctbig').textContent=P+'%';
+$('headline').textContent=`ผ่านเกณฑ์ ${pass} จาก ${D.length} ตัวชี้วัด`;
+$('chips').innerHTML=`<span class="chip pass"><i></i>ผ่าน ${pass}</span><span class="chip fail"><i></i>ไม่ผ่าน ${fail}</span>`;
+// donut
+const r=46,c=2*Math.PI*r,pl=c*pass/D.length;
+$('donut').innerHTML=`<circle cx="60" cy="60" r="${r}" fill="none" stroke="var(--fail)" stroke-width="14"/><circle cx="60" cy="60" r="${r}" fill="none" stroke="var(--pass)" stroke-width="14" stroke-dasharray="${pl} ${c-pl}" transform="rotate(-90 60 60)"/>`;
+// strategies
+$('strat').innerHTML=[1,2,3,4].map(s=>{const a=D.filter(x=>x.st===s),p=a.filter(x=>x.status==='pass').length,f=a.length-p;
+ return `<div class="srow"><div class="top"><span>ยุทธศาสตร์ที่ ${s} ${SN[s]}</span><b>${p}/${a.length} ผ่าน</b></div><div class="bar"><div class="bp" style="flex:${p}"></div><div class="bf" style="flex:${f}"></div></div></div>`}).join('');
+// attention
+const F=D.filter(x=>x.status==='fail');
+$('attnsub').textContent=`${F.length} ข้อ เรียงตามลำดับตัวชี้วัด`;
+$('attn').innerHTML=F.map(x=>`<li><span class="no">${x.no}</span><div><div>${x.name}</div><div class="meta">ยุทธศาสตร์ ${x.st} · ${x.own}${x.pct?' · ผลงาน '+x.pct:''}</div></div></li>`).join('');
+
+// teams
+const LB={pass:'ผ่าน',fail:'ไม่ผ่าน',nodata:'ไม่มีข้อมูล'};
+const pill=(k,raw)=>`<span class="chip ${k==='nodata'?'nd':k}"><i></i>${raw&&k==='nodata'&&!raw.startsWith('#')?raw:LB[k]}</span>`;
+let curT=null;
+$('teams').innerHTML=T.map((t,ix)=>{const pr=t.items.filter(i=>i.prim),b=pr.length?pr:t.items;
+ const p=b.filter(i=>i.main==='pass').length,f=b.length-p,m=t.items.filter(i=>i.mis).length;
+ return `<button type="button" class="tb" data-i="${ix}" aria-pressed="false"><strong>${t.team}</strong><div class="bar"><div class="bp" style="flex:${p}"></div><div class="bf" style="flex:${f}"></div></div><small>${pr.length?'รับผิดชอบ':'ร่วมรับผิดชอบ'} ${b.length} ข้อ · ผ่าน ${p}</small>${m?`<small class="warn">ชีตทีมไม่ตรง ${m} ข้อ</small>`:''}</button>`}).join('');
+function showTeam(ix){curT=curT===ix?null:ix;
+ document.querySelectorAll('.tb').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===curT));
+ if(curT===null){$('tdetail').innerHTML='';return}
+ const t=T[curT];
+ $('tdetail').innerHTML=`<div class="td"><table><thead><tr><th>ข้อ</th><th>ตัวชี้วัด</th><th>หน้าแรก (สรุป)</th><th>ชีตของทีม</th></tr></thead><tbody>`+
+ t.items.map(i=>`<tr class="${i.mis?'mis':''}"><td>${i.no}</td><td>${i.name}${i.prim?'':' <span class="tag">(ร่วมรับผิดชอบ)</span>'}</td><td>${pill(i.main)}</td><td>${pill(i.team,i.raw)}${i.mis?' <span class="tag">ไม่ตรงกับหน้าแรก</span>':''}</td></tr>`).join('')+`</tbody></table></div>`+
+ (t.items.some(i=>i.mis)?'<p class="mnote">แถวสีแดงอ่อน คือข้อที่สถานะในชีตทีมไม่ตรงกับชีตหน้าแรก ควรตรวจสอบก่อนนำเสนอ</p>':'');}
+document.querySelectorAll('.tb').forEach(b=>b.onclick=()=>showTeam(+b.dataset.i));
+// list
+let flt='all',q='';
+function render(){
+ let h='';
+ [1,2,3,4].forEach(s=>{
+  const a=D.filter(x=>x.st===s&&(flt==='all'||x.status===flt)&&(!q||(x.name+x.own+(x.goal||'')).toLowerCase().includes(q)));
+  if(!a.length)return;
+  const p=D.filter(x=>x.st===s&&x.status==='pass').length,t=D.filter(x=>x.st===s).length;
+  h+=`<div class="sg"><h3><span>ยุทธศาสตร์ที่ ${s} ${SN[s]}</span><small>ผ่าน ${p}/${t}</small></h3>`;
+  a.forEach(x=>{
+   h+=`<div class="k"><span class="n">${x.no}</span><div><div class="nm">${x.name}</div><div class="det"><span>${x.own}</span>${x.tgt?`<span>เกณฑ์ ${x.tgt}</span>`:''}${x.pct?`<span>ผลงาน ${x.pct}</span>`:''}</div>`+
+   (x.subs.length?`<ul class="subs">${x.subs.map(u=>`<li><span class="dot" style="background:var(--${u.status})"></span>${u.name}</li>`).join('')}</ul>`:'')+
+   `</div><span class="chip ${x.status}"><i></i>${x.status==='pass'?'ผ่าน':'ไม่ผ่าน'}</span></div>`});
+  h+='</div>'});
+ $('list').innerHTML=h||'<div class="empty">ไม่พบตัวชี้วัดที่ตรงกับเงื่อนไข</div>';
+}
+document.querySelectorAll('.tools button').forEach(b=>b.onclick=()=>{flt=b.dataset.f;document.querySelectorAll('.tools button').forEach(o=>o.setAttribute('aria-pressed',o===b));render()});
+$('q').oninput=e=>{q=e.target.value.trim().toLowerCase();render()};
+render();
+</script>
+
+</body></html>
