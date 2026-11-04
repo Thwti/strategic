@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>แดชบอร์ดแผนยุทธศาสตร์ รพ.บัวใหญ่</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--tx:#1d2733;--mu:#6b7785;--bd:#e3e8ee;--ok:#1a9e5c;--no:#d64545;--pe:#e0a100;--ac:#2563eb}
+@media (prefers-color-scheme:dark){:root{--bg:#12161c;--card:#1b222b;--tx:#e8edf3;--mu:#93a0ae;--bd:#2c3642;--ok:#3ccf86;--no:#ff6b6b;--pe:#f2c340;--ac:#6ea0ff}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:Sarabun,system-ui,sans-serif;font-size:15px}
+.w{max-width:1200px;margin:0 auto;padding:16px}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+h1{font-size:20px;margin:0}.mu{color:var(--mu);font-size:13px}
+select,input{font:inherit;padding:7px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx)}
+button{font:inherit;padding:7px 12px;border:0;border-radius:8px;background:var(--ac);color:#fff;cursor:pointer}
+.g{display:grid;gap:12px;margin-top:14px}.k{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px}
+.n{font-size:30px;font-weight:700}.two{grid-template-columns:minmax(260px,1fr) 2fr}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.dn{width:150px;height:150px;border-radius:50%;margin:8px auto;position:relative}
+.dn::after{content:attr(data-t);position:absolute;inset:26px;background:var(--card);border-radius:50%;display:grid;place-items:center;font-size:24px;font-weight:700}
+.lg{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-size:13px}
+.d{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--bd);margin:4px 0 12px}
+.bar i{display:block}.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:760px}
+th,td{padding:8px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}
+th{font-size:13px;color:var(--mu);position:sticky;top:0;background:var(--card)}
+.b{padding:2px 9px;border-radius:99px;font-size:12px;color:#fff;white-space:nowrap}
+.pg{height:6px;background:var(--bd);border-radius:3px;min-width:70px}.pg i{display:block;height:100%;border-radius:3px}
+#err{display:none;background:#fff3cd;color:#664d03;padding:10px 14px;border-radius:8px;margin-top:12px}
+.f{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+</style></head><body><div class="w">
+<header><div><h1>แดชบอร์ดแผนยุทธศาสตร์ รพ.บัวใหญ่ ปีงบประมาณ 2569</h1><div class="mu" id="up">กำลังโหลด…</div></div>
+<div class="f" style="margin:0"><select id="sh"></select><button id="rf">รีเฟรช</button></div></header>
+<div id="err"></div>
+<div class="g k" id="kp"></div>
+<div class="g two"><div class="c"><b>สัดส่วนผลการประเมิน</b><div class="dn" id="dn"></div><div class="lg" id="lg"></div></div>
+<div class="c"><b>ผลแยกตามยุทธศาสตร์</b><div id="st" style="margin-top:10px"></div></div></div>
+<div class="c" style="margin-top:12px"><b>ภาพรวมรายทีม</b> <span class="mu">(คลิกชื่อทีมเพื่อดูรายละเอียด)</span><div class="tw"><table style="min-width:520px"><thead><tr><th>ทีม / แท็บ</th><th>กรอกแล้ว</th><th>ผ่าน</th><th>ไม่ผ่าน</th><th>ยังไม่มีผล</th><th>ยังไม่กรอก</th></tr></thead><tbody id="ov"></tbody></table></div></div>
+<div class="c" style="margin-top:12px"><div class="f">
+<select id="fs"><option value="">ทุกยุทธศาสตร์</option></select>
+<select id="ft"><option value="">ทุกสถานะ</option><option value="ok">ผ่าน</option><option value="no">ไม่ผ่าน</option><option value="pe">ยังไม่มีผล</option></select>
+<label id="hl" class="mu"><input type="checkbox" id="hf" checked> เฉพาะข้อที่ทีมกรอกแล้ว</label>
+<input id="q" placeholder="ค้นหาตัวชี้วัด / ผู้รับผิดชอบ"></div>
+<div class="tw"><table><thead><tr><th>#</th><th>ตัวชี้วัด</th><th>เป้าหมาย</th><th>ผลงาน</th><th>ร้อยละ</th><th>สถานะ</th><th>ผู้รับผิดชอบ</th></tr></thead><tbody id="tb"></tbody></table></div></div>
+</div>
+<script>
+const B="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6Xnt5BkqeWj9VyTwVWM0lact9FhHM2AvYRj3bYQSKr7vDTUU0XFUNOfHp0e42cUIWqc9DBPNr6FDb/pub?single=true&output=csv&gid=";
+const GIDS=[1010136227,1148946946,1147390328,1820421996,2071272693,2135484302,930563567,1252389283,174131063,2026911936,1362358644,63977953,1739542492];
+const NAMES=["หน้าแรกประมวลผล","ทีมเครื่องมือแพทย์","CFO","NCD","แพทย์แผนไทย","ทีม NSO","ทีม HRD","สารสนเทศ/ทีม IM","อาชีวอนามัย","สุขภาพจิต","ทันตกรรม","ทีม PCT","บริการปฐมภูมิฯ"];
+const COL={ok:"var(--ok)",no:"var(--no)",pe:"var(--pe)"},LB={ok:"ผ่าน",no:"ไม่ผ่าน",pe:"ยังไม่มีผล"};
+const $=i=>document.getElementById(i);let DATA={},rows=[],cur=GIDS[0];
+function csv(t){const r=[];let a=[],c="",q=false;for(let i=0;i<t.length;i++){const x=t[i];
+ if(q){if(x=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=x}
+ else if(x=='"')q=true;else if(x==","){a.push(c);c=""}
+ else if(x=="\n"||x=="\r"){if(x=="\r"&&t[i+1]=="\n")i++;a.push(c);r.push(a);a=[];c=""}else c+=x}
+ if(c||a.length){a.push(c);r.push(a)}return r}
+const cl=s=>(s||"").replace(/\s+/g," ").trim();
+function st(s){s=(s||"").replace(/[\u0E48-\u0E4B]/g,"");if(s.includes("ไมผาน"))return"no";if(s.includes("ผาน"))return"ok";return"pe"}
+function parse(r){let s="",g="";const out=[];
+ const h=r.findIndex(x=>cl(x[9])=="ปี 69");for(const x of r.slice(h<0?3:h+1)){if(cl(x[0]))s=cl(x[0]);if(cl(x[1]))g=cl(x[1]);
+  const k=cl(x[3]);if(!k)continue;if(!cl(x[13])&&!cl(x[11])&&!cl(x[9])&&!cl(x[10]))continue;
+  out.push({s,g,no:cl(x[2]),k,tg:cl(x[9]),den:cl(x[10]),v:cl(x[11]),p:cl(x[12]),st:st(x[13]),has:st(x[13])!="pe"||(!!cl(x[11])&&!cl(x[11]).startsWith("#")),o:cl(x[16]),o2:cl(x[17])})}
+ return out}
+function title(r,i){const a=cl((r[1]||[])[10]),b=cl((r[2]||[])[10]);return(a&&a.includes("ผลงาน")?a:b||("ชีตที่ "+(i+1)))+((r[2]||[])[10]&&a?"":"")}
+async function load(){$("err").style.display="none";let ok=0;
+ await Promise.all(GIDS.map(async(g,i)=>{try{const t=await(await fetch(B+g+"&t="+Date.now(),{cache:"no-store"})).text();
+  if(t.startsWith("<"))throw 0;const r=csv(t);const hh=r.find(x=>cl(x[9])=="ปี 69")||[];DATA[g]={n:NAMES[i],rows:parse(r),m:cl(hh[10])};ok++}catch(e){}}));
+ if(!ok){$("err").style.display="block";$("err").textContent="โหลดข้อมูลจาก Google Sheets ไม่สำเร็จ — หากเปิดไฟล์ผ่านหน้าแสดงตัวอย่างอาจถูกบล็อก ให้ดาวน์โหลดไฟล์แล้วเปิดในเบราว์เซอร์ หรืออัปโหลดขึ้นเว็บโฮสติ้งของคุณ";return}
+ const s=$("sh"),keep=cur;s.innerHTML=GIDS.filter(g=>DATA[g]).map((g,i)=>`<option value="${g}">${DATA[g].n}</option>`).join("");
+ cur=DATA[keep]?keep:+s.options[0].value;s.value=cur;
+ $("up").textContent="อัปเดตล่าสุด "+new Date().toLocaleTimeString("th-TH")+" • รีเฟรชอัตโนมัติทุก 60 วินาที";render()}
+function render(){const all=DATA[cur].rows,tm=cur!=GIDS[0];$("hl").style.display=tm?"":"none";rows=tm&&$("hf").checked?all.filter(r=>r.has):all;const c={ok:0,no:0,pe:0};if(tm)$("up").dataset.m=DATA[cur].m;rows.forEach(r=>c[r.st]++);const n=rows.length||1;
+ const fs=$("fs"),v=fs.value,ss=[...new Set(rows.map(r=>r.s))];fs.innerHTML='<option value="">ทุกยุทธศาสตร์</option>'+ss.map(x=>`<option>${x}</option>`).join("");fs.value=ss.includes(v)?v:"";
+ $("kp").innerHTML=[[tm?"ตัวชี้วัดที่กรอก"+(DATA[cur].m?" ("+DATA[cur].m+")":""):"ตัวชี้วัดทั้งหมด",rows.length,"var(--tx)"],["ผ่าน",c.ok,COL.ok],["ไม่ผ่าน",c.no,COL.no],["ยังไม่มีผล",c.pe,COL.pe],["ร้อยละผ่าน",Math.round(c.ok/n*100)+"%","var(--ac)"]].map(x=>`<div class="c"><div class="mu">${x[0]}</div><div class="n" style="color:${x[2]}">${x[1]}</div></div>`).join("");
+ const a=c.ok/n*100,b=a+c.no/n*100;$("dn").style.background=`conic-gradient(var(--ok) 0 ${a}%,var(--no) ${a}% ${b}%,var(--pe) ${b}% 100%)`;$("dn").dataset.t=Math.round(a)+"%";
+ $("lg").innerHTML=["ok","no","pe"].map(k=>`<span><i class="d" style="background:${COL[k]}"></i>${LB[k]} ${c[k]}</span>`).join("");
+ $("st").innerHTML=ss.map(s=>{const x=rows.filter(r=>r.s==s),t=x.length,o=x.filter(r=>r.st=="ok").length,f=x.filter(r=>r.st=="no").length;
+  return`<div style="font-size:13px">${s.replace(/\(.*\)/,"")} <span class="mu">(ผ่าน ${o}/${t})</span></div><div class="bar"><i style="width:${o/t*100}%;background:var(--ok)"></i><i style="width:${f/t*100}%;background:var(--no)"></i><i style="width:${(t-o-f)/t*100}%;background:var(--pe)"></i></div>`}).join("");
+
+ $("ov").innerHTML=GIDS.filter(g=>DATA[g]).map(g=>{const a=DATA[g].rows,f=a.filter(r=>r.has),o=f.filter(r=>r.st=="ok").length,x=f.filter(r=>r.st=="no").length;
+  return`<tr><td><a href="#" data-g="${g}" style="color:var(--ac)">${DATA[g].n}</a></td><td>${f.length}/${a.length}</td><td style="color:var(--ok)">${o}</td><td style="color:var(--no)">${x}</td><td>${f.length-o-x}</td><td>${g==GIDS[0]?"-":a.length-f.length}</td></tr>`}).join("");
+ document.querySelectorAll("#ov a").forEach(e=>e.onclick=ev=>{ev.preventDefault();cur=+e.dataset.g;$("sh").value=cur;render();scrollTo(0,0)});
+ tbl()}
+function tbl(){const s=$("fs").value,t=$("ft").value,q=$("q").value.toLowerCase();
+ $("tb").innerHTML=rows.filter(r=>(!s||r.s==s)&&(!t||r.st==t)&&(!q||(r.k+r.o+r.o2).toLowerCase().includes(q))).map(r=>{
+  const p=parseFloat(r.p.replace(/,/g,"")),pp=isNaN(p)?null:Math.max(0,Math.min(100,p));
+  return`<tr><td>${r.no}</td><td>${r.k}</td><td>${r.tg||"-"}</td><td>${r.v||"-"}${r.den?` <span class="mu">/ ${r.den}</span>`:""}</td><td>${pp===null?(r.p&&!r.p.startsWith("#")?r.p:"-"):`${p.toLocaleString()}<div class="pg"><i style="width:${pp}%;background:${COL[r.st]}"></i></div>`}</td><td><span class="b" style="background:${COL[r.st]}">${LB[r.st]}</span></td><td>${r.o}${r.o2?`<div class="mu">${r.o2}</div>`:""}</td></tr>`}).join("")||'<tr><td colspan="7" class="mu">ไม่พบข้อมูล</td></tr>'}
+$("sh").onchange=e=>{cur=+e.target.value;render()};$("hf").onchange=render;["fs","ft"].forEach(i=>$(i).onchange=tbl);$("q").oninput=tbl;$("rf").onclick=load;
+load();setInterval(load,60000);
+</script></body></html>
